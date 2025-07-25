@@ -5,6 +5,7 @@ export interface ServicesItem {
   text: string
   iconUrl: string
   light?: boolean
+  color?: string
 }
 
 export interface PricingPlan {

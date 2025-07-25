@@ -4,8 +4,8 @@ import type React from "react"
 
 import Section from "./Section"
 import Heading from "@/components/Heading"
-// import { GradientLight } from "./GradientLight"
-// import ClipPath from "./ClipPath"
+import { GradientLight } from "./GradientLight"
+import ClipPath from "./ClipPath"
 import { PricingCardSvg } from "./PricingCardSVG"
 import { Check } from "lucide-react"
 import type { PricingPlan } from "../app/types"
@@ -118,8 +118,14 @@ const Pricing = () => {
                 <PricingCardSvg cardNumber={index} />
               </div>
 
-              {/* Content Container */}
-              <div className="relative flex flex-col h-full p-8 lg:p-10" style={{ zIndex: 10 }}>
+              {/* Content Container with ClipPath */}
+              <div 
+                className="relative flex flex-col h-full p-8 lg:p-10" 
+                style={{ 
+                  zIndex: 10,
+                  clipPath: "url(#benefits)"
+                }}
+              >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2" style={{ zIndex: 30 }}>
                     <div
@@ -230,10 +236,17 @@ const Pricing = () => {
                 </button>
               </div>
 
-              {/* Background overlay - ahora por debajo del SVG */}
+              {/* GradientLight para el plan popular */}
+              {plan.popular && <GradientLight />}
+
+              {/* Background overlay with ClipPath */}
               <div
                 className="absolute inset-0.5"
-                style={{ backgroundColor: "#0E0C15", zIndex: 2 }}
+                style={{ 
+                  backgroundColor: "#0E0C15", 
+                  zIndex: 2,
+                  clipPath: "url(#benefits)"
+                }}
               >
                 <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-5">
                   <div
@@ -244,6 +257,9 @@ const Pricing = () => {
                   />
                 </div>
               </div>
+
+              {/* ClipPath definition */}
+              <ClipPath />
             </div>
           ))}
         </div>
