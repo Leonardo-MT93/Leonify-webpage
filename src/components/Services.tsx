@@ -63,12 +63,11 @@ const cardColors = ["#00D4FF", "#FF6B6B", "#9B59B6", "#F39C12", "#2ECC71", "#E74
 
 const Services = () => {
   return (
-    <Section id="servicios">
+    <Section id="servicios" className="scroll-mt-16 lg:scroll-mt-0">
       <div className="container relative z-2">
-        <Heading className="md:max-w-md lg:max-w-2xl" title="¿Cómo Transformamos Tu Negocio?" />
+        <Heading className="md:max-w-md lg:max-w-2xl" title="¿Por qué elegir la IA para hacer crecer tu negocio?" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 mb-10 max-w-7xl mx-auto">
           {services.map((item, index) => {
-            // Obtener el componente de icono y color correspondiente
             const IconComponent = iconMap[item.iconUrl as keyof typeof iconMap]
             const iconColor = cardColors[index % cardColors.length]
             

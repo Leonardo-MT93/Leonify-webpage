@@ -57,7 +57,7 @@ const FAQ = () => {
   }
 
   return (
-    <Section id="faq">
+    <Section id="faq" className="scroll-mt-16 lg:scroll-mt-0">
       <div className="container relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
