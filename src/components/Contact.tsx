@@ -67,7 +67,7 @@ const contactOptions = [
     description: "Chatea directamente con nuestro equipo y recibe atención personalizada al instante.",
     badge: "RESPUESTA INMEDIATA",
     icon: MessageCircle,
-    primaryButton: "CHATEAR POR WHATSAPP",
+    primaryButton: "ENVIAR WHATSAPP",
     light: true,
     type: "whatsapp"
   }

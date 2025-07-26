@@ -94,7 +94,7 @@ const Pricing = () => {
   }
 
   return (
-    <Section id="pricing">
+    <Section id="precios">
       <div className="container relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
@@ -118,7 +118,6 @@ const Pricing = () => {
                 <PricingCardSvg cardNumber={index} />
               </div>
 
-              {/* Content Container with ClipPath */}
               <div 
                 className="relative flex flex-col h-full p-8 lg:p-10" 
                 style={{ 
