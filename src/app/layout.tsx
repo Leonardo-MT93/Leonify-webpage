@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" 
-    // className="overflow-x-hidden" 
+    className="overflow-x-hidden" 
     >
       <body
         className={`${sora.variable} ${sourceCodePro.variable} ${spaceGrotesk.variable} antialiased overflow-x-hidden`}
