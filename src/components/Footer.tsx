@@ -19,13 +19,13 @@ const navigation: NavigationItem[] = [
   },
   {
     id: "2",
-    title: "Portfolio",
-    url: "#portfolio",
+    title: "Precios",
+    url: "#precios",
   },
   {
     id: "3",
-    title: "Nosotros",
-    url: "#nosotros",
+    title: "FAQ",
+    url: "#faq",
   },
   {
     id: "4",
@@ -60,6 +60,8 @@ const socials = [
     url: "#",
   },
 ]
+
+const currentYear = new Date().getFullYear();
 
 const Footer: React.FC = () => {
   return (
@@ -113,7 +115,7 @@ const Footer: React.FC = () => {
 
         <div className="pt-10 border-t border-n-6 text-center">
           <p className="body-2 text-n-4">
-            ©2025 Leonify. Todos los derechos reservados.
+            ©{currentYear} Leonify. Todos los derechos reservados.
           </p>
         </div>
       </div>

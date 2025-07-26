@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import Section from './Section';
 import Heading from './Heading';
@@ -97,12 +95,10 @@ const ContactCTA = () => {
                   <ContactCardSvg cardNumber={index} />
                 </div>
 
-                {/* Content Container */}
                 <div 
                   className="relative flex flex-col h-full p-8 lg:p-10" 
                   style={{ zIndex: 10 }}
                 >
-                  {/* Header Section */}
                   <div className="text-center mb-6">
                     <div className="flex justify-center mb-4">
                       <div className={`flex items-center gap-2 bg-gradient-to-r ${index === 0 ? 'from-color-1/20 to-color-1/10 border-color-1/30' : 'from-color-2/20 to-color-2/10 border-color-2/30'} border rounded-full px-4 py-2`}>
@@ -138,7 +134,6 @@ const ContactCTA = () => {
                     </div>
                   </div>
 
-                  {/* Form or Features Section */}
                   <div className="flex-1 mb-6">
                     {option.type === "form" ? (
                       <form className="space-y-4">
@@ -206,7 +201,6 @@ const ContactCTA = () => {
                     )}
                   </div>
 
-                  {/* Button Section */}
                   <div className="space-y-3">
                     <button
                       style={{
@@ -238,10 +232,8 @@ const ContactCTA = () => {
                   </div>
                 </div>
 
-                {/* GradientLight para destacar */}
                 {option.light && <GradientLight />}
 
-                {/* Background overlay */}
                 <div
                   className="absolute inset-0.5"
                   style={{ 

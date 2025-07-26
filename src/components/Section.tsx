@@ -1,4 +1,3 @@
-import type React from "react"
 // import SectionSvg from "./section-svg"
 import type { SectionProps } from "../app/types"
 

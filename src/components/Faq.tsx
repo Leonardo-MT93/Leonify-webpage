@@ -75,12 +75,9 @@ const FAQ = () => {
                   key={item.id}
                   className="relative group"
                 >
-                  {/* Background with subtle border */}
                   <div className="absolute inset-0 bg-n-7 rounded-2xl border border-n-6 group-hover:border-n-5 transition-colors duration-300" />
                   
-                  {/* Content */}
                   <div className="relative z-10">
-                    {/* Question Button */}
                     <button
                       onClick={() => toggleItem(item.id)}
                       className="w-full text-left p-6 lg:p-8 flex items-center justify-between group-hover:bg-n-6/20 rounded-2xl transition-colors duration-300"
@@ -103,7 +100,6 @@ const FAQ = () => {
                       </div>
                     </button>
 
-                    {/* Answer */}
                     <div 
                       className={`overflow-hidden transition-all duration-300 ease-in-out ${
                         isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
@@ -119,14 +115,12 @@ const FAQ = () => {
                     </div>
                   </div>
 
-                  {/* Hover glow effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl bg-gradient-to-r from-color-1/20 via-color-2/20 to-color-4/20 pointer-events-none" />
                 </div>
               )
             })}
           </div>
 
-          {/* CTA Section */}
           <div className="mt-16 text-center">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-color-1/10 via-color-2/10 to-color-4/10 rounded-2xl" />
@@ -137,8 +131,8 @@ const FAQ = () => {
                 <p className="text-n-3 text-lg mb-6 max-w-2xl mx-auto">
                   Nuestro equipo está aquí para ayudarte. Agenda una consulta gratuita y resolvemos todas tus dudas.
                 </p>
-                <button className="button relative inline-flex items-center justify-center h-12 px-8 text-n-8 bg-gradient-to-r from-color-1 to-color-2 rounded-lg hover:shadow-lg hover:shadow-color-1/25 transition-all duration-300 group font-semibold">
-                  <span className="relative z-10">CONSULTA GRATUITA</span>
+                <button className="button relative inline-flex items-center justify-center h-12 px-8 text-n-8 bg-gradient-to-r from-color-1 to-color-2 rounded-lg hover:shadow-lg hover:shadow-color-1/25 transition-all duration-300 group font-semibold border border-n-6">
+                  <span className="relative z-10 text-white">CONSULTA GRATUITA</span>
                 </button>
               </div>
             </div>

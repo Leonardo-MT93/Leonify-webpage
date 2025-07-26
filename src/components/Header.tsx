@@ -1,5 +1,4 @@
 "use client"
-import type React from "react"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import Logo from "../assets/logo.svg"
@@ -82,15 +81,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           </div>
         </nav>
 
-        {/* Right side buttons - Desktop only */}
         <div className="hidden md:flex items-center space-x-4">
-          {/* CONSULTA GRATUITA ocultado */}
           <button className="button relative inline-flex items-center justify-center h-11 px-7 text-n-1 transition-colors hover:text-color-1 border border-n-6 rounded-md hover:border-color-1">
-            VER DEMO
+            REALIZAR CONSULTA
           </button>
         </div>
 
-        {/* Mobile menu button - Only visible on mobile/tablet */}
         <button
           className="md:hidden p-2 -mr-2 z-50 relative"
           onClick={toggleNavigation}

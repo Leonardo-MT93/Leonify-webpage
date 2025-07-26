@@ -1,5 +1,3 @@
-"use client"
-
 import Section from "./Section"
 import Heading from "./Heading"
 import { GradientLight } from "./GradientLight"
@@ -48,7 +46,6 @@ const services: ServicesItem[] = [
   },
 ]
 
-// Mapeo de iconos
 const iconMap = {
   Zap,
   Bot,
@@ -58,7 +55,6 @@ const iconMap = {
   Puzzle,
 }
 
-// Colores vibrantes e intensos en secuencia arcoíris
 const cardColors = ["#00D4FF", "#FF6B6B", "#9B59B6", "#F39C12", "#2ECC71", "#E74C3C"]
 
 const Services = () => {

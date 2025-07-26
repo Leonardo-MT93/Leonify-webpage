@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import Section from "./Section"
 import Heading from "@/components/Heading"
 import { GradientLight } from "./GradientLight"
@@ -11,61 +9,61 @@ import { Check } from "lucide-react"
 import type { PricingPlan } from "../app/types"
 
 const pricingPlans: PricingPlan[] = [
-    {
-        "id": "0",
-        "title": "Automatización Básica",
-        "description": "Ideal para pequeños negocios que inician con IA",
-        "price": "299U$D",
-        "period": "/mes",
-        "features": [
-          "1 agente de atención básico",
-          "Automatización de hasta 3 procesos",
-          "Chatbot para WhatsApp Web",
-          "Soporte por email",
-          "Reportes mensuales básicos",
-          "Configuración inicial incluida"
-        ],
-        "popular": false,
-        "buttonText": "Comenzar Ahora"
-      },
-      {
-        "id": "1",
-        "title": "Automatización Pro",
-        "description": "Perfecto para empresas en crecimiento",
-        "price": "699U$D",
-        "period": "/mes",
-        "features": [
-          "Hasta 3 agentes especializados",
-          "Automatización de hasta 8 procesos",
-          "WhatsApp Business API completa",
-          "Sistema de citas automatizado",
-          "Agente de llamadas básico",
-          "Integraciones con CRM",
-          "Soporte prioritario",
-          "Reportes semanales detallados"
-        ],
-        "popular": true,
-        "buttonText": "Consulta Gratuita"
-      },
-      {
-        "id": "2",
-        "title": "Automatización Enterprise",
-        "description": "Solución completa para grandes empresas",
-        "price": "Personalizado",
-        "period": "",
-        "features": [
-          "Agentes ilimitados y especializados",
-          "Automatización completa de procesos",
-          "Múltiples canales (WhatsApp, Web, Llamadas)",
-          "Workflows personalizados con n8n",
-          "Integraciones avanzadas",
-          "Soporte 24/7 dedicado",
-          "Analíticas avanzadas y BI",
-          "Implementación y capacitación incluida"
-        ],
-        "popular": false,
-        "buttonText": "Contactar Ventas"
-      }
+  {
+    "id": "0",
+    "title": "Automatización Básica",
+    "description": "Ideal para pequeños negocios que inician con IA",
+    "price": "299U$D",
+    "period": "/mes",
+    "features": [
+      "1 agente de atención básico",
+      "Automatización de hasta 3 procesos",
+      "Chatbot para WhatsApp Web",
+      "Soporte por email",
+      "Reportes mensuales básicos",
+      "Configuración inicial incluida"
+    ],
+    "popular": false,
+    "buttonText": "Comenzar Ahora"
+  },
+  {
+    "id": "1",
+    "title": "Automatización Pro",
+    "description": "Perfecto para empresas en crecimiento",
+    "price": "699U$D",
+    "period": "/mes",
+    "features": [
+      "Hasta 3 agentes especializados",
+      "Automatización de hasta 8 procesos",
+      "WhatsApp Business API completa",
+      "Sistema de citas automatizado",
+      "Agente de llamadas básico",
+      "Integraciones con CRM",
+      "Soporte prioritario",
+      "Reportes semanales detallados"
+    ],
+    "popular": true,
+    "buttonText": "Consulta Gratuita"
+  },
+  {
+    "id": "2",
+    "title": "Automatización Enterprise",
+    "description": "Solución completa para grandes empresas",
+    "price": "Personalizado",
+    "period": "",
+    "features": [
+      "Agentes ilimitados y especializados",
+      "Automatización completa de procesos",
+      "Múltiples canales (WhatsApp, Web, Llamadas)",
+      "Workflows personalizados con n8n",
+      "Integraciones avanzadas",
+      "Soporte 24/7 dedicado",
+      "Analíticas avanzadas y BI",
+      "Implementación y capacitación incluida"
+    ],
+    "popular": false,
+    "buttonText": "Contactar Ventas"
+  }
 ]
 
 const Pricing = () => {
@@ -106,8 +104,8 @@ const Pricing = () => {
             <div
               className="block relative p-0.5 w-full max-w-[24rem] transition-all duration-300 flex-shrink-0"
               key={plan.id}
-              style={{ 
-                filter: "drop-shadow(0 0 0 transparent)", 
+              style={{
+                filter: "drop-shadow(0 0 0 transparent)",
                 transition: "all 0.3s ease",
                 minHeight: "28rem"
               }}
@@ -118,9 +116,9 @@ const Pricing = () => {
                 <PricingCardSvg cardNumber={index} />
               </div>
 
-              <div 
-                className="relative flex flex-col h-full p-8 lg:p-10" 
-                style={{ 
+              <div
+                className="relative flex flex-col h-full p-8 lg:p-10"
+                style={{
                   zIndex: 10,
                   clipPath: "url(#benefits)"
                 }}
@@ -144,7 +142,6 @@ const Pricing = () => {
                   </div>
                 )}
 
-                {/* Header Section */}
                 <div className="text-center mb-6">
                   <div
                     style={{
@@ -191,7 +188,6 @@ const Pricing = () => {
                   </div>
                 </div>
 
-                {/* Features Section - flex-1 to take remaining space */}
                 <div className="flex-1 mb-6">
                   <div style={{ listStyle: "none", padding: "0", margin: "0" }}>
                     {plan.features.map((feature: string, featureIndex: number) => (
@@ -210,7 +206,6 @@ const Pricing = () => {
                   </div>
                 </div>
 
-                {/* Button Section */}
                 <button
                   style={{
                     width: "100%",
@@ -235,14 +230,12 @@ const Pricing = () => {
                 </button>
               </div>
 
-              {/* GradientLight para el plan popular */}
               {plan.popular && <GradientLight />}
 
-              {/* Background overlay with ClipPath */}
               <div
                 className="absolute inset-0.5"
-                style={{ 
-                  backgroundColor: "#0E0C15", 
+                style={{
+                  backgroundColor: "#0E0C15",
                   zIndex: 2,
                   clipPath: "url(#benefits)"
                 }}
@@ -256,8 +249,6 @@ const Pricing = () => {
                   />
                 </div>
               </div>
-
-              {/* ClipPath definition */}
               <ClipPath />
             </div>
           ))}

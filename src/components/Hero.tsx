@@ -1,4 +1,3 @@
-"use client"
 
 import Section from "./Section"
 import { GradientLight } from "./GradientLight"
