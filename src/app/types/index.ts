@@ -19,6 +19,12 @@ export interface PricingPlan {
   buttonText: string
 }
 
+export interface FAQItem {
+  id: string
+  question: string
+  answer: string
+}
+
 export interface SectionProps {
   className?: string
   id?: string

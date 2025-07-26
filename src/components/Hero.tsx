@@ -28,10 +28,8 @@ const Hero = () => {
 
             <Section className="pt-[5rem] min-h-screen flex items-center relative z-10" crosses={true} crossesOffset="lg:translate-y-[5.25rem]" customPaddings="true">
                 <div className="container relative h-full">
-                    {/* Main Content - Full Height Layout */}
                     <div className="relative z-10 min-h-screen flex items-center py-8">
                         
-                        {/* Mobile Layout - Stack Vertically */}
                         <div className="lg:hidden w-full flex flex-col justify-center items-center text-center space-y-8 min-h-[80vh]">
                             <div className="space-y-6">
                                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-n-1 leading-tight px-4">
@@ -73,10 +71,8 @@ const Hero = () => {
                             </div>
                         </div>
 
-                        {/* Desktop Layout - Side by Side */}
                         <div className="hidden lg:flex w-full items-center justify-between min-h-[85vh] gap-12 xl:gap-16">
                             
-                            {/* Left Content */}
                             <div className="flex-1 max-w-2xl space-y-8">
                                 <h1 className="text-4xl xl:text-5xl 2xl:text-6xl font-semibold text-n-1 leading-tight">
                                     Transforma Tu Negocio con Automatización Inteligente{" "}
@@ -118,7 +114,6 @@ const Hero = () => {
                                 </div>
                             </div>
 
-                            {/* Right Content - Chat Mockup */}
                             <div className="flex-shrink-0 w-full max-w-md xl:max-w-lg">
                                 <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient shadow-2xl">
                                     <div className="relative bg-n-8 rounded-[1rem]">
@@ -132,13 +127,11 @@ const Hero = () => {
                                         
                                         <div className="aspect-[3/4] xl:aspect-[4/5] rounded-b-[0.9rem] overflow-hidden bg-gradient-to-br from-n-7 to-n-8 p-6">
                                             <div className="h-full flex flex-col">
-                                                {/* Header */}
                                                 <div className="flex items-center gap-2 mb-6">
                                                     <div className="w-2 h-2 bg-color-4 rounded-full animate-pulse"></div>
                                                     <span className="text-n-2 text-sm font-medium">Agente IA Activo</span>
                                                 </div>
 
-                                                {/* Chat messages */}
                                                 <div className="flex-1 space-y-4 overflow-hidden">
                                                     <div className="flex justify-end">
                                                         <div className="bg-color-1/20 border border-color-1/30 rounded-xl rounded-br-md p-3 max-w-[200px]">
@@ -168,7 +161,6 @@ const Hero = () => {
                                                         </div>
                                                     </div>
                                                     
-                                                    {/* Typing indicator */}
                                                     <div className="flex justify-start">
                                                         <div className="bg-n-6 border border-n-5 rounded-xl rounded-bl-md p-3">
                                                             <div className="flex space-x-1">
