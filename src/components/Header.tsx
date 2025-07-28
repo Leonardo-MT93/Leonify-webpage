@@ -1,46 +1,28 @@
 "use client"
+
 import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import Logo from "../assets/logo.svg"
-import type { HeaderProps, NavigationItem } from "../app/types"
 import Image from "next/image"
+import Logo from "../assets/logo.svg"
+import MenuSvg from "./MenuSvg"
+import type { HeaderProps, NavigationItem } from "../app/types"
+import Button from "./Button"
 
 const navigation: NavigationItem[] = [
-  {
-    id: "0",
-    title: "INICIO",
-    url: "#inicio",
-  },
-  {
-    id: "1",
-    title: "SERVICIOS",
-    url: "#servicios",
-  },
-  {
-    id: "2",
-    title: "PRECIOS",
-    url: "#precios",
-  },
-  {
-    id: "3",
-    title: "FAQ",
-    url: "#faq",
-  },
-  {
-    id: "4",
-    title: "CONTACTO",
-    url: "#contacto",
-  },
+  { id: "0", title: "INICIO", url: "#inicio" },
+  { id: "1", title: "SERVICIOS", url: "#servicios" },
+  { id: "2", title: "PRECIOS", url: "#precios" },
+  { id: "3", title: "FAQ", url: "#faq" },
+  { id: "4", title: "CONTACTO", url: "#contacto" },
 ]
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
-  const [openNavigation, setOpenNavigation] = useState<boolean>(false)
+  const [openNavigation, setOpenNavigation] = useState(false)
 
-  const toggleNavigation = (): void => {
+  const toggleNavigation = () => {
     setOpenNavigation(!openNavigation)
   }
 
-  const handleClick = (): void => {
+  const handleClick = () => {
     if (!openNavigation) return
     setOpenNavigation(false)
   }
@@ -53,13 +35,14 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     >
       <div className="flex items-center justify-between px-5 md:px-7.5 xl:px-10 py-4 md:py-0">
         <Image src={Logo} alt="Logo" className="w-30 h-auto" />
+
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
           } fixed top-[4.5rem] left-0 right-0 bottom-0 bg-n-8 md:static md:flex md:mx-auto md:bg-transparent md:top-auto`}
         >
           <div className="relative z-2 flex flex-col items-center justify-center m-auto md:flex-row">
-            {navigation.map((item: NavigationItem) => (
+            {navigation.map((item) => (
               <a
                 key={item.id}
                 href={item.url}
@@ -82,21 +65,22 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
-          <button className="button relative inline-flex items-center justify-center h-11 px-7 text-n-1 transition-colors hover:text-color-1 border border-n-6 rounded-md hover:border-color-1">
+          <Button href="#contacto"> 
             REALIZAR CONSULTA
-          </button>
+          </Button>
         </div>
 
         <button
-          className="md:hidden p-2 -mr-2 z-50 relative"
+          className="md:hidden ml-auto relative p-0.5 z-50"
           onClick={toggleNavigation}
           aria-label="Toggle navigation"
         >
-          {openNavigation ? (
-            <X className="w-6 h-6 text-n-1" />
-          ) : (
-            <Menu className="w-6 h-6 text-n-1" />
-          )}
+          <div className="relative flex items-center justify-center w-11 h-11 rounded-xl bg-conic-gradient overflow-hidden p-0.5">
+            <div className="absolute inset-[-100%] bg-conic-gradient animate-spin-slow opacity-100 blur-sm" />
+            <div className="relative flex items-center justify-center w-full h-full bg-n-8 rounded-[10px] overflow-hidden">
+              <MenuSvg openNavigation={openNavigation} />
+            </div>
+          </div>
         </button>
       </div>
     </div>

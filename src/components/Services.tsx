@@ -156,20 +156,6 @@ const Services = () => {
                   </div>
                 </div>
                 {item.light && <GradientLight />}
-                <div
-                  className="absolute inset-0.5"
-                  style={{ backgroundColor: "#0E0C15", clipPath: "url(#benefits)", zIndex: 1 }}
-                >
-                  <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                    <img
-                      src="/placeholder.svg?height=362&width=380"
-                      width={380}
-                      height={362}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
                 <ClipPath />
               </div>
             )

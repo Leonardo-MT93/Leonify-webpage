@@ -1,25 +1,24 @@
-
 import Section from "./Section"
 import { GradientLight } from "./GradientLight"
 import Image from "next/image"
 import heroBackground from "../assets/4.png"
+import Button from "./Button"
+import ButtonRounded from "./ButtonRounded"
 
 const Hero = () => {
     return (
         <div id="inicio" className="bg-n-8 h-screen relative overflow-hidden">
-            <div className="absolute inset-0 z-0 opacity-40">
-                <div className="absolute inset-0 bg-gradient-to-br from-n-8 via-n-7 to-n-8"></div>
+            <div className="absolute inset-0 z-0">
                 <Image 
                     src={heroBackground} 
                     alt="AI Technology Background" 
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-center opacity-60"
                     priority
                     quality={90}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-n-8/90 via-n-8/80 to-n-8/90"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-n-8/60 via-n-8/40 to-n-8/70"></div>
-                <div className="absolute inset-0 bg-n-8/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-n-8/80 via-transparent to-n-8/80"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-n-8/50 via-transparent to-n-8/70"></div>
             </div>
 
             <Section className="h-full flex items-center relative z-10" crosses={true} crossesOffset="lg:translate-y-[5.25rem]" customPaddings="true">
@@ -47,13 +46,13 @@ const Hero = () => {
                                 <p className="text-sm sm:text-base text-n-3 max-w-md mx-auto leading-relaxed">
                                     Liberamos a tu equipo de tareas repetitivas mientras nuestros agentes de IA atienden a tus clientes 24/7. Más productividad, menos estrés.
                                 </p>
-                                <button className="button relative inline-flex items-center justify-center h-11 px-7 text-n-1 bg-transparent border border-n-6 rounded-md hover:border-color-1 hover:text-color-1 transition-all duration-300 group text-xs sm:text-sm">
-                                    <span className="relative z-10">CONSULTA GRATUITA</span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-color-1/20 to-color-2/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                </button>
+                                <Button href="#contacto">
+                                    CONSULTA GRATUITA
+                                </Button>
                             </div>
                         </div>
 
+                        {/* Versión desktop */}
                         <div className="hidden lg:flex w-full items-center justify-between h-full gap-12 xl:gap-16">
                             <div className="flex-1 max-w-2xl space-y-8">
                                 <h1 className="text-4xl xl:text-5xl 2xl:text-6xl font-semibold text-n-1 leading-tight">
@@ -76,10 +75,9 @@ const Hero = () => {
                                     Liberamos a tu equipo de tareas repetitivas mientras nuestros agentes de IA atienden a tus clientes 24/7. Más productividad, menos estrés.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <button className="button relative inline-flex items-center justify-center h-12 px-8 text-n-1 bg-transparent border border-n-6 rounded-md hover:border-color-1 hover:text-color-1 transition-all duration-300 group">
-                                        <span className="relative z-10">CONSULTA GRATUITA</span>
-                                        <div className="absolute inset-0 bg-gradient-to-r from-color-1/20 to-color-2/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                    </button>
+                                    <ButtonRounded href="#contacto" variant="outline">
+                                        CONSULTA GRATUITA
+                                    </ButtonRounded>
                                 </div>
                             </div>
 

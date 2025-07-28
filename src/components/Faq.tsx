@@ -5,6 +5,7 @@ import Section from "./Section"
 import Heading from "./Heading"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import type { FAQItem } from "../app/types"
+import Button from "./Button"
 
 const faqData: FAQItem[] = [
   {
@@ -131,9 +132,9 @@ const FAQ = () => {
                 <p className="text-n-3 text-lg mb-6 max-w-2xl mx-auto">
                   Nuestro equipo está aquí para ayudarte. Agenda una consulta gratuita y resolvemos todas tus dudas.
                 </p>
-                <button className="button relative inline-flex items-center justify-center h-12 px-8 text-n-8 bg-gradient-to-r from-color-1 to-color-2 rounded-lg hover:shadow-lg hover:shadow-color-1/25 transition-all duration-300 group font-semibold border border-n-6">
+                <Button>
                   <span className="relative z-10 text-white">CONSULTA GRATUITA</span>
-                </button>
+                </Button>
               </div>
             </div>
           </div>

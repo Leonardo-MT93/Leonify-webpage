@@ -75,6 +75,13 @@
     line-height: 1.5;
     overflow-x: hidden;
   }
+  
+  /* Animación para prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-spin-slow {
+      animation: none;
+    }
+  }
 }
 
 /* Componentes personalizados */
@@ -252,7 +259,6 @@
     overflow: visible !important;
   }
   
-  /* Estilos específicos para el botón con gradientes */
   .button svg {
     pointer-events: none;
   }
@@ -264,6 +270,20 @@
   .button > span {
     position: relative;
     z-index: 10;
+  }
+  
+  /* Efecto glow opcional al hacer hover */
+  .hamburger-glow {
+    box-shadow: 
+      0 0 20px rgba(172, 106, 255, 0.4),
+      0 0 40px rgba(255, 200, 118, 0.3),
+      inset 0 0 20px rgba(172, 106, 255, 0.1);
+  }
+  
+  /* Para asegurar que las transformaciones funcionen correctamente */
+  .hamburger-button button {
+    -webkit-tap-highlight-color: transparent;
+    isolation: isolate;
   }
 }
 
@@ -280,7 +300,6 @@
   .bg-n-6 { background-color: var(--n-6); }
   .bg-n-7 { background-color: var(--n-7); }
   .bg-n-8 { background-color: var(--n-8); }
-  .bg-n-10 { background-color: var(--n-10); }
   .bg-stroke-1 { background-color: var(--stroke-1); }
   
   .text-n-1 { color: var(--n-1); }
@@ -290,7 +309,6 @@
   .text-n-8 { color: var(--n-8); }
   
   .border-n-4 { border-color: var(--n-4); }
-  .border-n-5 { border-color: var(--n-5); }
   .border-n-6 { border-color: var(--n-6); }
   
   .fill-n-1 { fill: var(--n-1); }
@@ -329,6 +347,7 @@
   .bg-color-4\/10 { background-color: rgb(122 219 120 / 0.1); }
   .bg-color-4\/20 { background-color: rgb(122 219 120 / 0.2); }
   
+  .border-n-5 { border-color: var(--n-5); }
   .border-color-1\/30 { border-color: rgb(172 106 255 / 0.3); }
   .border-color-2\/30 { border-color: rgb(255 200 118 / 0.3); }
   
@@ -338,7 +357,15 @@
   }
   
   .bg-conic-gradient {
-    background-image: conic-gradient(from 225deg, #ffc876, #79fff7, #9f53ff, #ff98e2, #ffc876);
+    background-image: conic-gradient(
+      from 225deg at 50% 50%,
+      #AC6AFF 0deg,
+      #FFC876 72deg,
+      #FF776F 144deg,
+      #7ADB78 216deg,
+      #858DFF 288deg,
+      #AC6AFF 360deg
+    );
   }
   
   /* Gradientes lineales para botones */
@@ -375,145 +402,21 @@
   .to-n-8\/90 { --tw-gradient-to: rgb(14 12 21 / 0.9); }
   .to-n-8\/70 { --tw-gradient-to: rgb(14 12 21 / 0.7); }
   
-  /* Hover effects */
-  .hover\:text-color-1:hover { color: var(--color-1); }
-  .hover\:bg-n-7:hover { background-color: var(--n-7); }
-  .hover\:bg-color-1\/90:hover { background-color: rgb(172 106 255 / 0.9); }
-  .hover\:border-color-1:hover { border-color: var(--color-1); }
-  
-  /* Hover brightness */
-  .hover\:brightness-110:hover {
-    filter: brightness(1.1);
+  /* Background clip para el efecto outline */
+  .bg-clip-padding {
+    background-clip: padding-box;
   }
   
-  /* Hover scale */
-  .hover\:scale-105:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Shadow utilities */
-  .shadow-lg {
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  }
-  
-  .shadow-md {
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  }
-  
-  .hover\:shadow-lg:hover {
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  }
-  
-  .hover\:shadow-md:hover {
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  }
-  
-  .shadow-color-1\/25 {
-    box-shadow: 0 10px 15px -3px rgb(172 106 255 / 0.25), 
-                0 4px 6px -4px rgb(172 106 255 / 0.25);
-  }
-  
-  .shadow-color-1\/20 {
-    box-shadow: 0 4px 6px -1px rgb(172 106 255 / 0.2), 
-                0 2px 4px -2px rgb(172 106 255 / 0.2);
-  }
-  
-  .hover\:shadow-color-1\/25:hover {
-    box-shadow: 0 10px 15px -3px rgb(172 106 255 / 0.25), 
-                0 4px 6px -4px rgb(172 106 255 / 0.25);
-  }
-  
-  .hover\:shadow-color-1\/20:hover {
-    box-shadow: 0 4px 6px -1px rgb(172 106 255 / 0.2), 
-                0 2px 4px -2px rgb(172 106 255 / 0.2);
-  }
-  
-  /* Group hover */
-  .group:hover .group-hover\:opacity-100 {
-    opacity: 1;
-  }
-  
-  .group:hover .group-hover\:bg-n-7 {
-    background-color: var(--n-7);
-  }
-  
-  /* Transition utilities */
-  .transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-  
-  .transition-colors {
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-  
-  .duration-300 {
-    transition-duration: 300ms;
-  }
-  
-  /* Border radius para botones */
-  .rounded-md { border-radius: 0.375rem; }
-  .rounded-lg { border-radius: 0.5rem; }
-  .rounded-xl { border-radius: 0.75rem; }
-  .rounded-2xl { border-radius: 1rem; }
-  .rounded-full { border-radius: 9999px; }
-  .rounded-\[1rem\] { border-radius: 1rem; }
-  .rounded-\[0\.9rem\] { border-radius: 0.9rem; }
-  .rounded-t-\[0\.9rem\] { border-top-left-radius: 0.9rem; border-top-right-radius: 0.9rem; }
-  .rounded-b-\[0\.9rem\] { border-bottom-right-radius: 0.9rem; border-bottom-left-radius: 0.9rem; }
-  .rounded-br-md { border-bottom-right-radius: 0.375rem; }
-  .rounded-bl-md { border-bottom-left-radius: 0.375rem; }
-  .rounded-\[10px\] { border-radius: 10px; }
-  .rounded-\[calc\(0\.5rem-2px\)\] { border-radius: calc(0.5rem - 2px); }
-  
-  /* Height y padding para botones */
-  .h-\[calc\(44px-4px\)\] { height: calc(44px - 4px); }
-  .p-\[2px\] { padding: 2px; }
-  
-  /* Z-index adicionales */
-  .z-10 { z-index: 10; }
-  .z-50 { z-index: 50; }
-  .-z-10 { z-index: -10; }
-  
-  /* Opacidad */
-  .opacity-0 { opacity: 0; }
-  .opacity-10 { opacity: 0.1; }
-  .opacity-20 { opacity: 0.2; }
-  .opacity-40 { opacity: 0.4; }
-  .opacity-100 { opacity: 1; }
-  
-  /* Blur */
-  .blur-sm { filter: blur(4px); }
-  .blur-xl { filter: blur(24px); }
-  
-  /* Border transparente */
-  .border-transparent {
-    border-color: transparent;
-  }
-  
-  /* Border width */
-  .border-2 {
-    border-width: 2px;
-  }
-  
-  /* Aspect ratio */
-  .aspect-\[3\/4\] { aspect-ratio: 3 / 4; }
-  .aspect-\[4\/5\] { aspect-ratio: 4 / 5; }
-  
-  /* Animation delay para los dots */
-  [style*="animation-delay"] {
-    animation-delay: var(--animation-delay);
-  }
-  
-  /* Animación para prefers-reduced-motion */
-  @media (prefers-reduced-motion: reduce) {
-    .animate-spin-slow {
-      animation: none;
-    }
-  }
+  /* Pseudo elementos */
+  .before\:absolute::before { position: absolute; }
+  .before\:inset-0::before { inset: 0; }
+  .before\:rounded-lg::before { border-radius: 0.5rem; }
+  .before\:p-\[2px\]::before { padding: 2px; }
+  .before\:bg-gradient-to-r::before { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+  .before\:from-color-1::before { --tw-gradient-from: var(--color-1); --tw-gradient-to: transparent; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+  .before\:via-color-2::before { --tw-gradient-to: transparent; --tw-gradient-stops: var(--tw-gradient-from), var(--color-2), var(--tw-gradient-to); }
+  .before\:to-color-4::before { --tw-gradient-to: var(--color-4); }
+  .before\:-z-10::before { z-index: -10; }
   
   /* Animación de rotación lenta para el gradiente */
   @keyframes spin-slow {
@@ -527,6 +430,46 @@
   
   .animate-spin-slow {
     animation: spin-slow 3s linear infinite;
+  }
+  
+  /* Sombras con colores personalizados */
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  .shadow-color-1\/25 {
+    box-shadow: 0 10px 15px -3px rgb(172 106 255 / 0.25), 
+                0 4px 6px -4px rgb(172 106 255 / 0.25);
+  }
+  
+  .hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  .hover\:shadow-color-1\/25:hover {
+    box-shadow: 0 10px 15px -3px rgb(172 106 255 / 0.25), 
+                0 4px 6px -4px rgb(172 106 255 / 0.25);
+  }
+  
+  /* Hover effects */
+  .hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+  
+  .hover\:bg-n-7:hover {
+    background-color: var(--n-7);
+  }
+  
+  .hover\:bg-color-1\/90:hover {
+    background-color: rgb(172 106 255 / 0.9);
+  }
+  
+  .hover\:text-color-1:hover {
+    color: var(--color-1);
+  }
+  
+  .hover\:border-color-1:hover {
+    border-color: var(--color-1);
   }
   
   /* Rotaciones */
@@ -567,21 +510,81 @@
     .xs\:min-h-\[18rem\] { min-height: 18rem; }
     .xs\:text-sm { font-size: 0.875rem; line-height: 1.25rem; }
   }
-}
-
-/* Estilos específicos del botón hamburguesa - IMPORTANTE */
-@layer components {
-  /* Efecto glow opcional al hacer hover */
-  .hamburger-glow {
-    box-shadow: 
-      0 0 20px rgba(172, 106, 255, 0.4),
-      0 0 40px rgba(255, 200, 118, 0.3),
-      inset 0 0 20px rgba(172 106, 255, 0.1);
+  
+  /* Otros efectos de hover */
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
   }
   
-  /* Para asegurar que las transformaciones funcionen correctamente */
-  .hamburger-button button {
-    -webkit-tap-highlight-color: transparent;
-    isolation: isolate;
+  /* Border radius */
+  .rounded-md { border-radius: 0.375rem; }
+  .rounded-lg { border-radius: 0.5rem; }
+  .rounded-xl { border-radius: 0.75rem; }
+  .rounded-2xl { border-radius: 1rem; }
+  .rounded-full { border-radius: 9999px; }
+  .rounded-\[1rem\] { border-radius: 1rem; }
+  .rounded-\[0\.9rem\] { border-radius: 0.9rem; }
+  .rounded-t-\[0\.9rem\] { border-top-left-radius: 0.9rem; border-top-right-radius: 0.9rem; }
+  .rounded-b-\[0\.9rem\] { border-bottom-right-radius: 0.9rem; border-bottom-left-radius: 0.9rem; }
+  .rounded-br-md { border-bottom-right-radius: 0.375rem; }
+  .rounded-bl-md { border-bottom-left-radius: 0.375rem; }
+  .rounded-\[10px\] { border-radius: 10px; }
+  
+  /* Z-index adicionales */
+  .z-10 { z-index: 10; }
+  .z-50 { z-index: 50; }
+  .-z-10 { z-index: -10; }
+  
+  /* Opacidad */
+  .opacity-0 { opacity: 0; }
+  .opacity-10 { opacity: 0.1; }
+  .opacity-20 { opacity: 0.2; }
+  .opacity-40 { opacity: 0.4; }
+  .opacity-100 { opacity: 1; }
+  
+  /* Blur */
+  .blur-sm { filter: blur(4px); }
+  .blur-xl { filter: blur(24px); }
+  
+  /* Bg para el botón outline con el pseudo elemento */
+  .before\:content-\[\'\'\]::before {
+    content: '';
   }
+  
+  /* Border transparente */
+  .border-transparent {
+    border-color: transparent;
+  }
+  
+  /* Border width */
+  .border-2 {
+    border-width: 2px;
+  }
+  
+  /* Aspect ratio */
+  .aspect-\[3\/4\] { aspect-ratio: 3 / 4; }
+  .aspect-\[4\/5\] { aspect-ratio: 4 / 5; }
+  
+  /* Animation delay para los dots */
+  [style*="animation-delay"] {
+    animation-delay: var(--animation-delay);
+  }
+  
+  /* Border radius personalizado con calc */
+  .rounded-\[calc\(0\.5rem-2px\)\] { 
+    border-radius: calc(0.5rem - 2px); 
+  }
+  
+  /* Height con calc */
+  .h-\[calc\(44px-4px\)\] { 
+    height: calc(44px - 4px); 
+  }
+  
+  /* Padding más preciso para el efecto outline */
+  .p-\[2px\] { 
+    padding: 2px; 
+  }
+  
+  /* Bg n-10 */
+  .bg-n-10 { background-color: var(--n-10); }
 }

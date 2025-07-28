@@ -7,6 +7,7 @@ import ClipPath from "./ClipPath"
 import { PricingCardSvg } from "./PricingCardSVG"
 import { Check } from "lucide-react"
 import type { PricingPlan } from "../app/types"
+import Button from "./Button"
 
 const pricingPlans: PricingPlan[] = [
   {
@@ -206,7 +207,7 @@ const Pricing = () => {
                   </div>
                 </div>
 
-                <button
+                {/* <button
                   style={{
                     width: "100%",
                     padding: "12px 24px",
@@ -227,7 +228,10 @@ const Pricing = () => {
                   onMouseLeave={(e) => handleButtonMouseLeave(e, plan)}
                 >
                   {plan.buttonText}
-                </button>
+                </button> */}
+                <Button href="#contacto">
+                  {plan.buttonText}
+                </Button>
               </div>
 
               {plan.popular && <GradientLight />}
